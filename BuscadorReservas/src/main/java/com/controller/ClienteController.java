@@ -48,11 +48,11 @@ public class ClienteController {
 		Cliente Cliente_actualizado= new Cliente();
 		
 		Cliente_seleccionado= clienteService.getClienteById(id);
-		Cliente_seleccionado.setDNI(cliente.getDNI());
+		Cliente_seleccionado.setDni(cliente.getDni());
 		Cliente_seleccionado.setNombre(cliente.getNombre());
 		Cliente_seleccionado.setApellido(cliente.getApellido());
 		Cliente_seleccionado.setTelefono(cliente.getTelefono());
-		Cliente_seleccionado.setEmail(cliente.getEmail());
+		Cliente_seleccionado.setUsuario(cliente.getUsuario());
 		
 		Cliente_actualizado = Cliente_seleccionado;
 		clienteService.updateCliente(Cliente_actualizado);
