@@ -18,6 +18,7 @@ import com.service.HotelService;
 
 @RestController
 @CrossOrigin(origins="https://main.d2ckn95sow20us.amplifyapp.com")
+
 @RequestMapping("/api")
 public class HotelController {
 	@Autowired
