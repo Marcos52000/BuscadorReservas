@@ -66,8 +66,6 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 		CorsConfiguration configuration = new CorsConfiguration();
 	    configuration.setAllowedOrigins(Arrays.asList("main.d2ckn95sow20us.amplifyapp.com/"));
 	    configuration.setAllowedMethods(Arrays.asList("GET","POST","PUT","DELETE"));
-	    source = new UrlBasedCorsConfigurationSource();
-	    source.registerCorsConfiguration("/**", configuration);
 		return source;
 	}
 }
