@@ -32,26 +32,35 @@ public class Hotel {
 	private int estrellas;
 	@Column(name = "notamedia")
 	private double notamedia;
+	@Column(name = "precio")
+	private double precio;
+	@Column(name = "imagen")
+	private String imagen;
 	@OneToMany
     @JoinColumn(name="id")
     private List<Reserva> reserva;
+	
 	
 	//contructores
 	public Hotel() {
 		super();
 	}
-	
-	public Hotel(Long id_hotel, String nombre, String direccion, int telefono, String pais, int estrellas,
-			double notamedia, List<Reserva> reserva) {
-		this.id = id_hotel;
+
+	public Hotel(Long id, String nombre, String direccion, int telefono, String pais, int estrellas, double notamedia,
+			double precio, String imagen, List<Reserva> reserva) {
+		super();
+		this.id = id;
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.telefono = telefono;
 		this.pais = pais;
 		this.estrellas = estrellas;
 		this.notamedia = notamedia;
+		this.precio = precio;
+		this.imagen = imagen;
 		this.reserva = reserva;
 	}
+
 
 	//getters y setters
 	
@@ -121,14 +130,32 @@ public class Hotel {
 	public void setReserva(List<Reserva> reserva) {
 		this.reserva = reserva;
 	}
+	public double getPrecio() {
+		return precio;
+	}
 
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+	
 	//toString
 	@Override
 	public String toString() {
 		return "Hotel [id=" + id + ", nombre=" + nombre + ", direccion=" + direccion + ", telefono=" + telefono
-				+ ", pais=" + pais + ", estrellas=" + estrellas + ", notamedia=" + notamedia + ", reserva=" + reserva
-				+ "]";
+				+ ", pais=" + pais + ", estrellas=" + estrellas + ", notamedia=" + notamedia + ", precio=" + precio
+				+ ", imagen=" + imagen + ", reserva=" + reserva + "]";
 	}
+
+
+
 	
 
 	

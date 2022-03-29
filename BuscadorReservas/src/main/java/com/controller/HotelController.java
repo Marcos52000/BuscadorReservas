@@ -53,6 +53,8 @@ public class HotelController {
 		Hotel_seleccionado.setPais(hotel.getPais());
 		Hotel_seleccionado.setEstrellas(hotel.getEstrellas());
 		Hotel_seleccionado.setNotamedia(hotel.getNotamedia());
+		Hotel_seleccionado.setPrecio(hotel.getPrecio());
+		Hotel_seleccionado.setImagen(hotel.getImagen());
 		Hotel_actualizado = HotelService.updateHotel(Hotel_seleccionado);
 
 		System.out.println("El Hotel actualizado es: " + Hotel_actualizado);
