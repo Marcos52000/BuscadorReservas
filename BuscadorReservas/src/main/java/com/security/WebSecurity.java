@@ -48,6 +48,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 			.anyRequest().authenticated().and()
 				.addFilter(new JWTAuthenticationFilter(authenticationManager()))
 				.addFilter(new JWTAuthorizationFilter(authenticationManager()));
+		
 	}
 
 	@Override
