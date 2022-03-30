@@ -52,25 +52,25 @@ public class Reserva {
 		return id;
 	}
 	public void setid(Long id) {
-		id = id;
+		this.id = id;
 	}
 	public String getFecha_entrada() {
 		return fecha_entrada;
 	}
 	public void setFecha_entrada(String fecha_entrada) {
-		fecha_entrada = fecha_entrada;
+		this.fecha_entrada = fecha_entrada;
 	}
 	public String getFecha_salida() {
 		return fecha_salida;
 	}
 	public void setFecha_salida(String fecha_salida) {
-		fecha_salida = fecha_salida;
+		this.fecha_salida = fecha_salida;
 	}
 	public int getImporte() {
 		return importe;
 	}
 	public void setImporte(int importe) {
-		importe = importe;
+		this.importe = importe;
 	}
 	public Cliente getCliente() {
 		return cliente;
