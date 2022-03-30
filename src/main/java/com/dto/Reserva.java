@@ -1,5 +1,7 @@
 package com.dto;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -11,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 
 @Entity
 @Table(name="Reservas")
@@ -18,10 +22,12 @@ public class Reserva {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)//busca ultimo valor e incrementa desde id final de db
 	private Long id;
+	@JsonFormat(pattern = "dd-mm-yyyy")
 	@Column(name = "fecha_entrada")//no hace falta si se llama igual
-	private Date fecha_entrada;
+	private LocalDate fecha_entrada;
+	@JsonFormat(pattern = "dd-mm-yyyy")
 	@Column(name = "fecha_salida")//no hace falta si se llama igual
-	private Date fecha_salida;
+	private LocalDate fecha_salida;
 	@Column(name = "importe")
 	private int importe;
 	@ManyToOne
@@ -37,7 +43,7 @@ public class Reserva {
 		super();
 	}
 
-	public Reserva(Long id, Date fecha_entrada, Date fecha_salida, int importe, Cliente cliente, Hotel hotel) {
+	public Reserva(Long id, LocalDate fecha_entrada, LocalDate fecha_salida, int importe, Cliente cliente, Hotel hotel) {
 		this.id = id;
 		this.fecha_entrada = fecha_entrada;
 		this.fecha_salida = fecha_salida;
@@ -52,25 +58,25 @@ public class Reserva {
 		return id;
 	}
 	public void setid(Long id) {
-		id = id;
+		this.id = id;
 	}
-	public Date getFecha_entrada() {
+	public LocalDate getFecha_entrada() {
 		return fecha_entrada;
 	}
-	public void setFecha_entrada(Date fecha_entrada) {
-		fecha_entrada = fecha_entrada;
+	public void setFecha_entrada(LocalDate fecha_entrada) {
+		this.fecha_entrada = fecha_entrada;
 	}
-	public Date getFecha_salida() {
+	public LocalDate getFecha_salida() {
 		return fecha_salida;
 	}
-	public void setFecha_salida(Date fecha_salida) {
-		fecha_salida = fecha_salida;
+	public void setFecha_salida(LocalDate fecha_salida) {
+		this.fecha_salida = fecha_salida;
 	}
 	public int getImporte() {
 		return importe;
 	}
 	public void setImporte(int importe) {
-		importe = importe;
+		this.importe = importe;
 	}
 	public Cliente getCliente() {
 		return cliente;

@@ -7,6 +7,8 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+import com.dto.Reserva;
+
 @SpringBootApplication
 public class BuscadorReservasApplication {
 
@@ -15,7 +17,7 @@ public class BuscadorReservasApplication {
 	}
 	 @Bean
 	    public WebMvcConfigurer corsConfigurer() {
-	        return new WebMvcConfigurerAdapter() {
+	        return new WebMvcConfigurer() {
 	            @Override
 	            public void addCorsMappings(CorsRegistry registry) {
 	                registry.addMapping("/**").allowedOrigins("https://main.d2ckn95sow20us.amplifyapp.com");
